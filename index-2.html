@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#140007">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Happy Birthday SAMIA ❤️">
+<title>Happy Birthday SAMIA ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   TOKENS
+   Deep maroon, crimson, hot pink, blush
+========================= */
+
+:root {
+    --wine-900: #140007;
+    --wine-800: #2a0210;
+    --wine-700: #410014;
+
+    --rose-100: #ffe1e9;
+    --rose-200: #ffb3c6;
+    --rose-300: #ff8fab;
+    --rose-400: #ff4d7d;
+    --rose-600: #ff174f;
+
+    --bark: #c4523d;
+
+    --ivory: #fff4f7;
+
+    --serif: "Cormorant Garamond", "Amiri", "Times New Roman", serif;
+    --script: "Dancing Script", "Cormorant Garamond", cursive;
+    --arabic: "Amiri", "Cormorant Garamond", "Geeza Pro", "Traditional Arabic", serif;
+}
+
+
+/* =========================
+   BASE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: var(--wine-900);
+    color-scheme: dark;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: var(--serif);
+    color: var(--ivory);
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 91, 140, 0.7), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(255, 23, 79, 0.85), transparent 35%),
+        linear-gradient(135deg, #160008, var(--wine-700), var(--wine-900));
+    background-repeat: no-repeat;
+}
+
+.gild {
+    background: linear-gradient(180deg, #ffffff 0%, #ffe1e9 42%, #ff9ab3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--rose-200);
+}
+
+
+/* =========================
+   AMBIENT (words + petals)
+========================= */
+
+.ambient {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.word {
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    font-style: italic;
+    color: rgba(255, 179, 198, 0.13);
+    animation: rise linear infinite;
+}
+
+@keyframes rise {
+    0%   { transform: translateY(105vh); opacity: 0; }
+    12%  { opacity: 1; }
+    88%  { opacity: 1; }
+    100% { transform: translateY(-12vh); opacity: 0; }
+}
+
+.petal {
+    position: absolute;
+    top: 0;
+    animation: drift linear infinite;
+}
+
+.petal svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    animation: flutter 3.2s ease-in-out infinite alternate;
+}
+
+.sparkle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff 0%, var(--rose-200) 45%, transparent 75%);
+    animation: twinkle ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.4); }
+    50%      { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes flutter {
+    from { transform: rotate(-28deg) scaleX(1); }
+    to   { transform: rotate(28deg) scaleX(0.45); }
+}
+
+@keyframes drift {
+    0%   { transform: translate3d(0, -6vh, 0) rotate(0deg); opacity: 0; }
+    10%  { opacity: var(--o, 0.7); }
+    90%  { opacity: var(--o, 0.7); }
+    100% { transform: translate3d(var(--dx, 40px), 108vh, 0) rotate(var(--rot, 200deg)); opacity: 0; }
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: clamp(40px, 7vh, 72px) 20px 0;
+}
+
+.header h1 {
+    font-weight: 300;
+    line-height: 1;
+}
+
+.h1-top {
+    display: block;
+    font-family: var(--script);
+    font-style: normal;
+    font-weight: 600;
+    font-size: clamp(32px, 5.4vw, 56px);
+    letter-spacing: 0.01em;
+    margin-bottom: 0.3em;
+    filter: drop-shadow(0 3px 18px rgba(255, 23, 79, 0.4));
+}
+
+.h1-name {
+    display: block;
+    font-weight: 400;
+    font-size: clamp(54px, 12.5vw, 138px);
+    letter-spacing: 0.26em;
+    padding-left: 0.26em; /* balances the trailing letter-spacing */
+    filter: drop-shadow(0 4px 26px rgba(255, 23, 79, 0.5));
+}
+
+.ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: clamp(20px, 3.5vh, 32px);
+}
+
+.ornament span {
+    width: clamp(48px, 9vw, 96px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--rose-300));
+}
+
+.ornament span:last-child {
+    background: linear-gradient(270deg, transparent, var(--rose-300));
+}
+
+.ornament svg {
+    width: 14px;
+    height: 14px;
+    fill: var(--rose-400);
+}
+
+.ornament .jewel {
+    width: 9px;
+    height: 9px;
+    fill: var(--rose-300);
+    opacity: 0.85;
+}
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+.content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(24px, 6vw, 96px);
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: clamp(20px, 3vh, 40px) 6% 0;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    flex: 1 1 380px;
+    max-width: 520px;
+    text-align: center;
+}
+
+.letter h2 {
+    font-family: var(--script);
+    font-style: normal;
+    font-weight: 600;
+    font-size: clamp(40px, 5vw, 62px);
+    line-height: 1.1;
+    color: var(--rose-200);
+    margin-bottom: 0.7em;
+}
+
+.letter p {
+    font-family: var(--arabic);
+    font-size: clamp(20px, 2vw, 25px);
+    line-height: 2.1;
+    color: rgba(255, 244, 247, 0.95);
+    text-shadow: 0 1px 14px rgba(40, 0, 14, 0.35);
+    text-wrap: balance;
+}
+
+.letter p + p {
+    margin-top: 1.1em;
+}
+
+.inline-heart {
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    margin-inline-start: 0.35em;
+    vertical-align: -0.04em;
+    fill: var(--rose-400);
+}
+
+
+/* =========================
+   TREE
+========================= */
+
+.tree-area {
+    flex: 0 1 520px;
+    width: 100%;
+    max-width: 520px;
+}
+
+.tree {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    filter: drop-shadow(0 0 22px rgba(255, 23, 79, 0.4));
+}
+
+/* one orchestrated moment: trunk grows, branches are drawn, hearts bloom */
+
+.trunk {
+    fill: url(#trunkGrad);
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+    animation: grow 1.4s cubic-bezier(0.3, 0.7, 0.2, 1) both;
+}
+
+@keyframes grow {
+    from { transform: scaleY(0); }
+    to   { transform: scaleY(1); }
+}
+
+.branch {
+    fill: none;
+    stroke: var(--bark);
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    animation: draw 1.4s ease-out both;
+}
+
+@keyframes draw {
+    from { stroke-dashoffset: 1; }
+    to   { stroke-dashoffset: 0; }
+}
+
+.leaf {
+    animation: bloom 0.9s cubic-bezier(0.2, 0.9, 0.25, 1.15) both;
+}
+
+@keyframes bloom {
+    from { transform: scale(0); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+.crown {
+    transform-origin: 260px 470px;
+    animation: sway 10s ease-in-out 6s infinite;
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(0deg); }
+    25%      { transform: rotate(0.9deg); }
+    75%      { transform: rotate(-0.9deg); }
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-wrap {
+    position: relative;
+    z-index: 10;
+    margin: clamp(36px, 6vh, 64px) auto 0;
+    padding: 0 16px;
+    text-align: center;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.unit {
+    min-width: clamp(68px, 14vw, 132px);
+    padding: clamp(10px, 1.6vh, 16px) clamp(10px, 2.6vw, 30px);
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(255, 179, 198, 0.1), rgba(255, 77, 125, 0.04));
+    box-shadow: inset 0 0 0 1px rgba(255, 179, 198, 0.22);
+}
+
+.unit + .unit {
+    margin-left: clamp(4px, 1.4vw, 14px);
+}
+
+.num {
+    display: block;
+    font-weight: 300;
+    font-size: clamp(40px, 7vw, 76px);
+    line-height: 1;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    color: var(--rose-100);
+}
+
+.label {
+    display: block;
+    margin-top: 0.5em;
+    font-style: italic;
+    font-size: clamp(15px, 1.8vw, 19px);
+    letter-spacing: 0.06em;
+    color: var(--rose-200);
+    opacity: 0.95;
+}
+
+.until {
+    margin-top: 22px;
+    font-family: var(--script);
+    font-weight: 600;
+    font-style: normal;
+    font-size: clamp(20px, 2.4vw, 26px);
+    color: rgba(255, 225, 233, 0.85);
+}
+
+.done {
+    font-family: var(--arabic);
+    font-size: clamp(30px, 5vw, 52px);
+    line-height: 1.6;
+    color: var(--rose-100);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: clamp(40px, 7vh, 64px) 20px 56px;
+    font-family: var(--script);
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(32px, 5vw, 48px);
+    color: var(--rose-200);
+}
+
+.footer svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--rose-400);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 860px) {
+
+    .content {
+        flex-direction: column;
+        padding: 24px 5% 0;
+        gap: 20px;
+    }
+
+    .tree-area {
+        order: -1;
+        flex: none;
+        max-width: 400px;
+    }
+
+    .letter {
+        flex: none;
+        width: 100%;
+    }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ambient { display: none; }
+
+    .trunk,
+    .branch,
+    .leaf,
+    .crown {
+        animation: none;
+    }
+
+    .branch { stroke-dasharray: none; }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- heart symbol reused everywhere -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="heart" viewBox="0 0 24 24">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </symbol>
+    <symbol id="petal" viewBox="0 0 24 24">
+        <path d="M12 22 C 5 18 3 11 8 5 C 10 3 13 2 16 3 C 21 8 19 18 12 22 Z"/>
+        <path d="M12 20 C 9 15 9 9 12 5" fill="none" stroke="#fff" stroke-opacity="0.4" stroke-width="1" stroke-linecap="round"/>
+    </symbol>
+</svg>
+
+
+<!-- background words + petals -->
+<div class="ambient" id="ambient" aria-hidden="true"></div>
+
+
+<header class="header">
+
+    <h1>
+        <span class="h1-top gild">Happy Birthday</span>
+        <span class="h1-name gild">SAMIA</span>
+    </h1>
+
+    <div class="ornament" aria-hidden="true">
+        <span></span>
+        <svg class="jewel" viewBox="0 0 24 24"><use href="#petal"/></svg>
+        <svg viewBox="0 0 24 24"><use href="#heart"/></svg>
+        <svg class="jewel" viewBox="0 0 24 24"><use href="#petal"/></svg>
+        <span></span>
+    </div>
+
+</header>
+
+
+<main class="content">
+
+    <section class="letter">
+
+        <h2>Dear SAMIA</h2>
+
+        <div lang="ar" dir="rtl">
+
+            <p>
+                في يوم ميلادك،
+                أتمنى لك سنة جديدة
+                مليئة بالسعادة
+                والحب والنجاح.
+            </p>
+
+            <p>
+                أتمنى أن تكون
+                كل لحظة في حياتك
+                جميلة مثل قلبك.
+            </p>
+
+            <p>
+                شكراً لوجودك
+                في هذه الحياة
+                <svg class="inline-heart" viewBox="0 0 24 24" aria-hidden="true"><use href="#heart"/></svg>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <div class="tree-area">
+
+        <svg class="tree" viewBox="0 0 520 640" role="img" aria-label="A tree whose crown is made of hearts">
+
+            <defs>
+                <linearGradient id="trunkGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#3a0c04"/>
+                    <stop offset="0.5" stop-color="#b23a26"/>
+                    <stop offset="1" stop-color="#2a0803"/>
+                </linearGradient>
+                <radialGradient id="halo">
+                    <stop offset="0" stop-color="#ff174f" stop-opacity="0.3"/>
+                    <stop offset="1" stop-color="#ff174f" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="ground">
+                    <stop offset="0" stop-color="#ff4d7d" stop-opacity="0.32"/>
+                    <stop offset="1" stop-color="#ff4d7d" stop-opacity="0"/>
+                </radialGradient>
+            </defs>
+
+            <ellipse cx="260" cy="290" rx="255" ry="235" fill="url(#halo)"/>
+            <ellipse cx="260" cy="616" rx="130" ry="11" fill="url(#ground)"/>
+
+            <path class="trunk" d="M226 614 C 242 604, 246 566, 249 528 C 251 502, 253 484, 254 466 L 266 466 C 267 484, 269 502, 271 528 C 274 566, 278 604, 294 614 Z"/>
+
+            <g class="crown">
+
+                <g id="branches" fill="none">
+                    <path class="branch" pathLength="1" stroke-width="4.5" style="animation-delay:0.9s" d="M258 480 C 250 440, 214 404, 168 344"/>
+                    <path class="branch" pathLength="1" stroke-width="4.5" style="animation-delay:1.0s" d="M262 480 C 270 440, 306 404, 352 344"/>
+                    <path class="branch" pathLength="1" stroke-width="3.5" style="animation-delay:1.1s" d="M259 470 C 256 420, 240 366, 214 296"/>
+                    <path class="branch" pathLength="1" stroke-width="3.5" style="animation-delay:1.2s" d="M261 470 C 264 420, 280 366, 306 296"/>
+                    <path class="branch" pathLength="1" stroke-width="3" style="animation-delay:1.3s" d="M260 466 C 260 410, 260 340, 260 262"/>
+                    <path class="branch" pathLength="1" stroke-width="2.2" style="animation-delay:1.7s" d="M214 386 C 190 388, 168 396, 146 382"/>
+                    <path class="branch" pathLength="1" stroke-width="2.2" style="animation-delay:1.8s" d="M306 386 C 330 388, 352 396, 374 382"/>
+                    <path class="branch" pathLength="1" stroke-width="2.2" style="animation-delay:1.9s" d="M232 352 C 210 340, 196 316, 196 286"/>
+                    <path class="branch" pathLength="1" stroke-width="2.2" style="animation-delay:2.0s" d="M288 352 C 310 340, 324 316, 324 286"/>
+                </g>
+
+                <g id="leaves"></g>
+
+            </g>
+
+        </svg>
+
+    </div>
+
+</main>
+
+
+<section class="countdown-wrap" aria-label="Countdown to 25 April 2027">
+
+    <div class="countdown" id="countdown">
+
+        <div class="unit">
+            <span class="num" id="days">00</span>
+            <span class="label">days</span>
+        </div>
+
+        <div class="unit">
+            <span class="num" id="hours">00</span>
+            <span class="label">hours</span>
+        </div>
+
+        <div class="unit">
+            <span class="num" id="minutes">00</span>
+            <span class="label">minutes</span>
+        </div>
+
+        <div class="unit">
+            <span class="num" id="seconds">00</span>
+            <span class="label">seconds</span>
+        </div>
+
+    </div>
+
+    <p class="until" id="until">until <time datetime="2027-04-25">25 April 2027</time></p>
+
+</section>
+
+
+<footer class="footer">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#heart"/></svg>
+    <span>I Love You SAMIA</span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#heart"/></svg>
+</footer>
+
+
+<script>
+
+const rnd = (a, b) => a + Math.random() * (b - a);
+
+
+/* =========================
+   AMBIENT: WORDS + PETALS
+========================= */
+
+const ambient = document.getElementById("ambient");
+
+const words = [
+    "I Love You", "Happy Birthday", "SAMIA", "Love", "Forever",
+    "You Are Special", "♡", "My Heart", "Beautiful", "Happy",
+    "أحبك", "سعادة", "حب", "قلبي"
+];
+
+for (let i = 0; i < 12; i++) {
+    const w = document.createElement("div");
+    w.className = "word";
+    w.textContent = words[Math.floor(Math.random() * words.length)];
+    w.style.left = rnd(2, 90) + "%";
+    w.style.fontSize = rnd(18, 30) + "px";
+    w.style.animationDuration = rnd(24, 40) + "s";
+    w.style.animationDelay = "-" + rnd(0, 36) + "s";
+    ambient.appendChild(w);
+}
+
+for (let i = 0; i < 22; i++) {
+    const sp = document.createElement("div");
+    const size = rnd(2.5, 6);
+    sp.className = "sparkle";
+    sp.style.left = rnd(2, 98) + "%";
+    sp.style.top = rnd(4, 96) + "%";
+    sp.style.width = sp.style.height = size + "px";
+    sp.style.animationDuration = rnd(1.8, 4) + "s";
+    sp.style.animationDelay = "-" + rnd(0, 4) + "s";
+    ambient.appendChild(sp);
+}
+
+const petalColors = ["#ffe1e9", "#ffb3c6", "#ff8fab", "#ff6b9b", "#ff4d7d"];
+
+for (let i = 0; i < 26; i++) {
+    const p = document.createElement("div");
+    const size = rnd(13, 24);
+    p.className = "petal";
+    p.style.left = rnd(0, 98) + "%";
+    p.style.width = p.style.height = size + "px";
+    p.style.fill = petalColors[Math.floor(Math.random() * petalColors.length)];
+    p.style.setProperty("--dx", rnd(-90, 90) + "px");
+    p.style.setProperty("--rot", rnd(-240, 240) + "deg");
+    p.style.setProperty("--o", rnd(0.45, 0.85).toFixed(2));
+    p.style.animationDuration = rnd(14, 26) + "s";
+    p.style.animationDelay = "-" + rnd(0, 26) + "s";
+    p.innerHTML = '<svg viewBox="0 0 24 24"><use href="#petal"/></svg>';
+    const flap = p.firstChild.style;
+    flap.animationDuration = rnd(2.4, 4.4) + "s";
+    flap.animationDelay = "-" + rnd(0, 4) + "s";
+    ambient.appendChild(p);
+}
+
+
+/* =========================
+   HEART TREE
+   Crown = nested outlines of the classic heart curve,
+   filled with small hearts that bloom from the bottom up.
+========================= */
+
+const hx = t => 16 * Math.pow(Math.sin(t), 3);
+const hy = t =>
+    13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
+
+const CX = 260, CY = 250, S = 12.4;
+const TIP = CY + 17 * S;          // bottom point of the heart
+const SPAN = 17 * S + 11.5 * S;   // full height of the heart
+
+const leafColors = ["#ff174f", "#ff174f", "#ff4d7d", "#ff4d7d", "#ff2158", "#ff0055", "#fe6189", "#ff8fab", "#ffb3c6", "#ffb3c6"];
+const leaves = [];
+
+for (let s = 0.14; s <= 1.001; s += 0.086) {
+
+    const n = Math.max(6, Math.round(s * 46));
+
+    for (let i = 0; i < n; i++) {
+
+        const t = (i / n) * Math.PI * 2 + rnd(-0.05, 0.05);
+        const k = s * rnd(0.94, 1.04);
+
+        const x = CX + hx(t) * S * k + rnd(-5, 5);
+        const y = CY - hy(t) * S * k + rnd(-5, 5);
+
+        const size = rnd(10, 18);
+        const rot = rnd(-25, 25);
+        const color = Math.random() < 0.08
+            ? "#ffe1e9"
+            : leafColors[Math.floor(Math.random() * leafColors.length)];
+        const delay = 1.8 + ((TIP - y) / SPAN) * 1.9 + rnd(0, 0.5);
+
+        leaves.push(
+            `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot.toFixed(0)})">` +
+            `<g class="leaf" style="animation-delay:${delay.toFixed(2)}s">` +
+            `<use href="#heart" x="${(-size / 2).toFixed(1)}" y="${(-size / 2).toFixed(1)}" ` +
+            `width="${size.toFixed(1)}" height="${size.toFixed(1)}" fill="${color}" ` +
+            `opacity="${rnd(0.78, 1).toFixed(2)}"/>` +
+            `</g></g>`
+        );
+    }
+}
+
+document.getElementById("leaves").innerHTML = leaves.join("");
+
+
+/* =========================
+   COUNTDOWN
+   Birthday: 25 April 2027
+========================= */
+
+const birthday = new Date("2027-04-25T00:00:00");
+const pad = n => String(n).padStart(2, "0");
+
+const el = {
+    days: document.getElementById("days"),
+    hours: document.getElementById("hours"),
+    minutes: document.getElementById("minutes"),
+    seconds: document.getElementById("seconds")
+};
+
+function updateCountdown() {
+
+    let diff = birthday - new Date();
+
+    if (diff <= 0) {
+        document.getElementById("countdown").innerHTML =
+            '<p class="done" lang="ar" dir="rtl">كل عام وأنتِ بخير</p>';
+        document.getElementById("until").hidden = true;
+        clearInterval(timer);
+        return;
+    }
+
+    const DAY = 86400000, HOUR = 3600000, MIN = 60000;
+
+    const days = Math.floor(diff / DAY);
+    diff %= DAY;
+    const hours = Math.floor(diff / HOUR);
+    diff %= HOUR;
+    const minutes = Math.floor(diff / MIN);
+    const seconds = Math.floor((diff % MIN) / 1000);
+
+    el.days.textContent = pad(days);
+    el.hours.textContent = pad(hours);
+    el.minutes.textContent = pad(minutes);
+    el.seconds.textContent = pad(seconds);
+}
+
+const timer = setInterval(updateCountdown, 1000);
+updateCountdown();
+
+</script>
+
+</body>
+</html>
